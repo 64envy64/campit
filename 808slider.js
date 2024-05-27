@@ -7,19 +7,16 @@ let countItem = items.length;
 let itemActive = 0;
 let refreshInterval;
 
-// переключения на следующий слайд
 const nextSlide = () => {
   itemActive = (itemActive + 1) % countItem;
   showSlider();
 };
 
-// переключения на предыдущий слайд
 const prevSlide = () => {
   itemActive = (itemActive - 1 + countItem) % countItem;
   showSlider();
 };
 
-// Обработчики событий для кнопок "Next" и "Prev"
 next.addEventListener('click', nextSlide);
 prev.addEventListener('click', prevSlide);
 
@@ -30,5 +27,4 @@ const showSlider = () => {
   items[itemActive].classList.add('active');
 };
 
-// Запуск автоматического переключения слайдов
 refreshInterval = setInterval(nextSlide, 6000);

@@ -16,32 +16,6 @@ gsap.ticker.add((time)=>{
 
 gsap.ticker.lagSmoothing(0)
 
-const sliderImgs = ["landing1.jpg", "landing2.jpg", "landing3.jpg", "landing4.jpg", "landing5.jpg", "landing6.jpg"];
-let sliderImage = document.querySelector('.background-image');
-
-let currentImage = 0;
-
-setInterval(changeSliderImage, 5000);
-
-function changeSliderImage() {
-    sliderImage.style.opacity = 0; // Плавно делаем изображение невидимым
-
-    setTimeout(() => {
-        if (currentImage >= sliderImgs.length - 1) {
-            currentImage = 0;
-        } else {
-            currentImage++;
-        }
-
-        sliderImage.src = `img/${sliderImgs[currentImage]}`;
-
-        // Задаем таймер для плавного показа изображения после загрузки
-        setTimeout(() => {
-            sliderImage.style.opacity = 1;
-        }, 100);
-    }, 500); // Дополнительная задержка для плавного перехода
-}
-
 var app = function () {
     var body = undefined;
     var menu = undefined;
@@ -66,12 +40,12 @@ var app = function () {
   document.addEventListener('DOMContentLoaded', function() {
     var navLinks = document.querySelectorAll('.nav__list-item a');
   
-    // Обработчик события клика на ссылки навигации
+
     navLinks.forEach(function(link) {
       link.addEventListener('click', function(event) {
-        event.preventDefault(); // Отмена стандартного действия ссылки
-        var targetId = this.getAttribute('href'); // Получаем ID целевой секции
-        var currentActive = document.querySelector('.nav__list-item.active-nav'); // Находим текущий активный элемент навигации
+        event.preventDefault(); 
+        var targetId = this.getAttribute('href'); 
+        var currentActive = document.querySelector('.nav__list-item.active-nav'); 
   
         if (currentActive) {
           currentActive.classList.remove('active-nav');
