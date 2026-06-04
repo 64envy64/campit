@@ -1208,10 +1208,6 @@ body.nav-active .nav__list-item:nth-child(10) {
     left: 0;
     padding: 10px 0;
 }
-.copyright-dsgn {
-  text-decoration: none;
-  color: #ab86f6;
-}
 /* tab view */
 
 @media screen and (max-width: 996px) {
